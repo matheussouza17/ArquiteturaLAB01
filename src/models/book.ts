@@ -1,14 +1,14 @@
-class Book {
-    code: number;
-    title: string;
-    author: string;
-    available: boolean;
+class Livro {
+    codigo: number;
+    titulo: string;
+    autor: string;
+    disponivel: boolean;
 
     constructor(code: number, title: string, author: string, available: boolean = true) {
-        this.code = code;
-        this.title = title;
-        this.author = author;
-        this.available = available;
+        this.codigo = code;
+        this.titulo = title;
+        this.autor = author;
+        this.disponivel = available;
     }
 }
-export default Book;
+export default Livro;

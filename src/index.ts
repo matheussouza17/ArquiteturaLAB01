@@ -6,21 +6,21 @@ function registerBooks(library: Library) {
     const book2 = new Book(2, "1984", "O Gladiador");
     const book3 = new Book(3, "Bible", "Bible");
 
-    library.addBook(book1);
-    library.addBook(book2);
-    library.addBook(book3);
+    library.adicionarLivro(book1);
+    library.adicionarLivro(book2);
+    library.adicionarLivro(book3);
 
     console.log("Books registered in the collection.");
 }
 
 // Function to register a loan
 function makeLoan(library: Library, code: number) {
-    library.registerLoan(code);
+    library.registarEmprestimo(code);
 }
 
 // Function to check the availability of a book
 function checkAvailability(library: Library, code: number) {
-    const available = library.checkAvailability(code);
+    const available = library.consultarDisponibilidade(code);
     console.log(`The book with code ${code} is ${available ? "available" : "unavailable"}.`);
 }
 
