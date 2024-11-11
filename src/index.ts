@@ -22,8 +22,12 @@ function checkAvailability(library: Library, code: number) {
     console.log(`O livro com código ${code} está ${available ? "disponível" : "indisponível"}.`);
 }
 
-const library = new Library();
-registerBooks(library);
-makeLoan(library, 1);
-checkAvailability(library, 1);
-checkAvailability(library, 2);
+function main(){
+    const library = new Library();
+    registerBooks(library);
+    makeLoan(library, 1);
+    checkAvailability(library, 1);
+    checkAvailability(library, 2);
+}
+
+main();
