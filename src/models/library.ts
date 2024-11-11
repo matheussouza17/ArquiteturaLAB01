@@ -1,29 +1,30 @@
-import Book from './book';
+import Livro from './book';
 
 class Library {
-    private collection: Book[] = [];
+    private collection: Livro[] = [];
 
-    adicionarLivro(book: Book): void {
+    public adicionarLivro(book: Livro): void {
         this.collection.push(book);
     }
 
-    registarEmprestimo(code: number): void {
-        const book = this.collection.find(b => b.codigo === code);
-        if (book && book.disponivel) {
-            book.disponivel = false;
-            console.log(`Loan made for the book: ${book.titulo}`);
+    public registarEmprestimo(code: number): void {
+        const book = this.collection.find(b => b.getCodigo() === code);
+        if (book && book.isDisponivel()) {
+            book.setDisponivel(false);
+            console.log(`Empréstimo realizado para o livro: ${book.getTitulo()}`);
         } else {
-            console.log("Book not available for loan or not found.");
+            console.log("Livro não disponível para empréstimo ou não encontrado.");
         }
     }
 
-    consultarDisponibilidade(code: number): boolean {
-        const book = this.collection.find(b => b.codigo === code);
-        if (book) return book.disponivel;
+    public consultarDisponibilidade(code: number): boolean {
+        const book = this.collection.find(b => b.getCodigo() === code);
+        if (book) return book.isDisponivel();
         else {
-            console.log("Book not found.");
+            console.log("Livro não encontrado.");
             return false;
         }
     }
 }
+
 export default Library;
